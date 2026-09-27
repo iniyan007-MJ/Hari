@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One Last Story — Hari</title>
+<meta name="theme-color" content="#0b0b0d">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap');
+
+:root{
+  --bg:#09090b; --card:#111114; --text:#f2f0eb; --muted:#a8a5a0;
+  --line:#29282c; --soft:#18181c; --accent:#d8c7a5;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:"DM Sans",sans-serif;line-height:1.8;
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.045;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
+  z-index:10
+}
+.wrap{max-width:820px;margin:auto;padding:0 22px}
+.hero{min-height:100svh;display:grid;place-items:center;text-align:center;padding:60px 0}
+.eyebrow{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
+h1,h2{font-family:"Playfair Display",serif;font-weight:500;line-height:1.15}
+h1{font-size:clamp(48px,11vw,92px);margin:20px 0}
+.hero p{max-width:570px;margin:0 auto;color:var(--muted);font-size:15px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;margin-top:34px;
+  border:1px solid #444249;background:transparent;color:var(--text);
+  padding:13px 22px;border-radius:999px;cursor:pointer;font:inherit;
+  transition:.25s;
+}
+.btn:hover{background:#17171a;transform:translateY(-2px)}
+.intro{padding:80px 0;border-top:1px solid var(--line)}
+.notice{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px}
+.notice strong{color:var(--accent)}
+.story{padding:75px 0;border-top:1px solid var(--line)}
+.story-num{font-size:11px;color:var(--accent);letter-spacing:.2em}
+h2{font-size:clamp(30px,7vw,48px);margin:12px 0 25px}
+p{font-size:16px;margin:0 0 18px}
+.muted{color:var(--muted)}
+.quote{
+  margin:34px 0;padding:25px 22px;border-left:2px solid var(--accent);
+  font-family:"Playfair Display",serif;font-size:23px;line-height:1.5;
+}
+.timeline{display:grid;gap:14px;margin-top:30px}
+.moment{background:var(--soft);border:1px solid var(--line);border-radius:16px;padding:18px}
+.moment b{display:block;margin-bottom:4px}
+.final{
+  min-height:85svh;display:grid;place-items:center;text-align:center;
+  padding:100px 0;border-top:1px solid var(--line)
+}
+.final h2{font-size:clamp(40px,9vw,70px)}
+.final p{color:var(--muted)}
+.signature{margin-top:40px;color:var(--accent);font-family:"Playfair Display",serif;font-size:22px}
+footer{text-align:center;padding:30px;color:#666;font-size:11px;letter-spacing:.12em}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
+.reveal.show{opacity:1;transform:none}
+#lock{
+  display:none;position:fixed;inset:0;background:#09090b;z-index:99;
+  place-items:center;text-align:center;padding:30px
+}
+.lockbox{max-width:500px}.lockbox h2{font-size:42px}
+.savebar{
+  position:fixed;right:16px;bottom:16px;z-index:20;
+  display:flex;gap:8px
+}
+.smallbtn{margin:0;padding:10px 15px;font-size:12px}
+@media(max-width:600px){
+  .wrap{padding:0 19px}.story{padding:60px 0}
+  p{font-size:15px}.quote{font-size:20px}
+}
+@media print{
+  .savebar,.btn{display:none}
+  .hero{min-height:auto;padding:40px 0}
+  .story{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+
+<div id="lock">
+  <div class="lockbox">
+    <div class="eyebrow">The story has ended here</div>
+    <h2>Thank you for reading.</h2>
+    <p class="muted">This little website was meant to be available only for a short time. Some stories are better left as memories.</p>
+  </div>
+</div>
+
+<div class="savebar">
+  <button class="btn smallbtn" onclick="window.print()">Save</button>
+</div>
+
+<header class="hero wrap">
+  <div>
+    <div class="eyebrow">A small piece of my story</div>
+    <h1>Hi, Hari.</h1>
+    <p>Maybe ungalukku thonalam, Ethukku eduthalum website-ah? nu 😅
+But honestly, enakku vera option enna nu theriyala. So, idha create panniten. First thing — idhu proposal kedaiyathu, okay? 😅 Bayapada vendam..</p>
+    <p>One small message contect full ennodathu, thanglish check mattum ChatGpt panna😅</p>
+    <button class="btn" onclick="document.querySelector('#start').scrollIntoView({behavior:'smooth'})">Read the story ↓</button>
+  </div>
+</header>
+
+<main id="start">
+
+<section class="intro wrap reveal">
+  <div class="notice">
+    <p><strong>Before you start…</strong></p>
+    <p>Idhu konjam long story ah irukkum. Around 15 minutes edukkalam. Ungalukku ippo time illa na, last-la save pannikkura option irukkum. Need irundha save pannikkonga.Morning automatic-ah indha website block aagidum.</p>
+    <p class="muted">Indha time-la idha share panradhu correct-ah nu enakkum theriyala. But idhukku apram naan idha share panna mudiyadhu nu thonuchu. Adhanala ippo share panren.</p>
+  </div>
+</section>
+
+<section class="story wrap reveal">
+  <div class="story-num">01 — THE FIRST DAY</div>
+  <h2>August 5, 2024.</h2>
+  <p>First-ah naan ungala parthathu August 5, 2024, Dubai, Ras Al Khaimah-la namma office-la dhaan.</p>
+  <p>First time paatha udane, enakku edho oru small change madhiri feel aachu. Adha proper-ah explain panna mudiyala.</p>
+  <p>But honestly, oru girl-ah first time paathadhum enakku pudichadhu neenga dhaan.</p>
+  <div class="quote">“Pesanum nu thonuchu. Aana pesa mudiyala.”</div>
+  <p>Ungalukku theriyum, naan generally girls-kooda pesa konjam bayapaduven. But ungala paatha mattum pesanum nu thonuchu.</p>
+</section>
+
+<section class="story wrap reveal">
+  <div class="story-num">02 — SAME SHIFT</div>
+  <h2>Little by little.</h2>
+  <p>Konjam days apram, naanum TD support-ku Bibin anna-ku support panna vandhuten. Appo enakku oru happy feeling irundhuchu.</p>
+  <p>Because neengalum naanum same shift, same line.</p>
+  <p>Naan ungala appove slight-ah like panna aarambichitten. But ungalukku adhu theriyadhu.</p>
+  <p>After some days, neenga ennai koopittu, “Anna, inga vanga” nu VCS-la oru doubt kettinga. Adhu dhaan first time proper-ah unga kooda pesuna moment.</p>
+  <p>Honestly, appo enakku light-ah kovam vandhuchu. 😅 “Anna” nu sonnadhai accept panna mudiyala.</p>
+</section>
+
+<section class="story wrap reveal">
+  <div class="story-num">03 — NOVEMBER 6</div>
+  <h2>The birthday.</h2>
+  <p>November 6, 2024 — unga birthday.</p>
+  <p>Neenga ellarukkum cake kuduthinga. Enakkum kuduthinga. But naan “Cold irukku, venda” nu sollitten.</p>
+  <p>Konjam days-ku apram, enakkum theriyama naan ungala one-side love panna aarambichitten.</p>
+  <p>But propose panna bayam. So edhuvum sollama, ellame one-side-ah pochu.</p>
+</section>
+
+<section class="story wrap reveal">
+  <div class="story-num">04 — RIVINA</div>
+  <h2>Where we became closer.</h2>
+  <p>Suddenly, namma konjam close friends aayittom.</p>
+  <p>You know… RIVINA project. En life-la marakka mudiyadha project adhu.</p>
+  <p>Andha project-la dhaan namma bond konjam close aachu.</p>
+  <p>Oru stage-la, “Konjam days apram propose pannalaam” nu naan fix pannirundhen.</p>
+  <p>But appo enakku ungaloda real story theriyadhu.</p>
+</section>
+
+<section class="story wrap reveal">
+  <div class="story-num">05 — JANUARY</div>
+  <h2>When I finally knew.</h2>
+  <p>January middle-la namma ellarum second shift-la irundhom. Avanga avanga story share pannanga.</p>
+  <p>Appo dhaan first time unga true love story enakku therinjadhu.</p>
+  <p>Naan en love story pathi already oru story solli irundhen. But adhu unmaiyana story illa.</p>
+  <p>Andha time-la naan ungala full-ah one-side love pannitu irundhen.</p>
+  <p>But adhulayum ungal mela endha mistake-um illa. Unga story enakku theriyama pochu. Adhu dhaan.</p>
+  <div class="quote">“En real first love story namma office-la start aachu. Andha story-la neenga dhaan.”</div>
+  <p>Adhu one-side love story mattum dhaan. After some time, konjam konjam adhulendhu recover aitten innaikaren.</p>
+</section>
+
+<section class="story wrap reveal">
+  <div class="story-num">06 — FRIENDSHIP</div>
+  <h2>The place you got in my life.</h2>
+  <p>Adhukku apram, ungal maadhiri oru person en life-la friend-ah vara maataanga nu enakku thonuchu.</p>
+  <p>Enakku pudicha first, best, and only one girl friend neenga dhaan. Andha place-ah yaarum replace panna mudiyadhu.</p>
+  <p>Adhukku apram dhaan namma first Instagram conversation vandhuchu. Andha time-la irundhu dhaan en fake love story start aachu. 😅</p>
+  <p>But honestly, adhukku apram enakku oru replace panna mudiyadha friend kedachanga. Adhu neenga mattum dhaan.</p>
+  <p>Neenga en kitta neraya time, “Ethukku ennaku ivlo pannaringa?” nu keturukinga.</p>
+  <p>Adhuku answer simple: enakku kedacha oru gift, best friend neenga. Adhanala dhaan naan ivlo panninen.</p>
+  <p>May be en one-side love failure aagirukkalam. But namma friendship-ah naan break panna maaten.</p>
+</section>
+
+<section class="story wrap reveal">
+  <div class="story-num">07 — THINGS I NEVER UNDERSTOOD</div>
+  <h2>The little pains.</h2>
+  <p>Sometimes enakku konjam possessiveness varum, especially neenga unga friend Vicky pathi pesumbodhu.</p>
+  <p>Honestly, enakku yen ipdi possessiveness varudhu nu enakkum theriyadhu.</p>
+  <p>Oru time neenga sonninga, avanga ungala love pannitu irundhanga nu. Adha ennaala accept panna mudiyala.</p>
+  <p>Sometimes, naan expect panra importance anga illa nu feel panniruken. Andha small small moments kooda konjam pain kuduthirukku.</p>
+  <p>Maybe neenga Vicky mela crush vechirundhirukkalam. I don't know. Naan edhuvum assume panna virumbala.</p>
+  <p>Oru random talk-la, naan irundhu apram “Naan ethukku office varanum?” sonninga. “First vandha Geetha akka, Anu, Mahima akka, Vicky irupanga. Ippo yaarum illa la?” nu sonninga.</p>
+  <p>Andha moment-la en name unga mind-la varala nu konjam feel aachu.</p>
+  <p>But adha appove marandhuten.</p>
+  <p>Naan office varumbodhu, neenga irupeenga, ungala paakalam, unga kooda pesalam nu dhaan maximum days office varuven.</p>
+  <p>Sorry Hari, indha point ungalukku hurt aagirundha. Aana sollama irukka mudiyala.</p>
+</section>
+
+<section class="story wrap reveal">
+  <div class="story-num">08 — THE BEST PART</div>
+  <h2>August 2024 → now.</h2>
+  <p>Open-ah sollaren. En childhood-la irundhu innaiku varaikkum, en life-la best part August 2024-la start aachu.</p>
+  <p>Enakku oru friend kedaichaanga. Naan pudichadha share panna mudinja oru person. Oru support. Oru guidance. Adhellam neenga dhaan.</p>
+  <p>Andha journey-la especially last five months dhaan romba special. Neraya things share pannom. Neraya things pesinom.</p>
+  <p>And honestly, neenga ennai oru nalla person-ah maathirukinga.</p>
+  <div class="timeline">
+    <div class="moment"><b>A small trust</b> Neenga bike-la kovilukku polam nu sonna apo, “Okay… naan ungalukku oru good friend” nu enakku feel aachu.</div>
+    <div class="moment"><b>A lot more to say</b> Innum neraya irukku. Solla aarambichaa, naan sollite poiduven. end illa unga story avalo iruku innam solla</div>
+  </div>
+  <p style="margin-top:22px">Unga story-a solla aarambichaa, adhuvum end illaama poidum. So inga dhaan stop pannikiren.</p>
+</section>
+
+<section class="story wrap reveal">
+  <div class="story-num">09 — JULY 27, 2026</div>
+  <h2>The day I saw you truly happy.</h2>
+  <p>Naan ungala romba happy-ah paatha moment July 27, 2026.</p>
+  <p>Andha day dhaan unga veetla unga love-ku okay sonnanga.</p>
+  <p>Neenga romba struggle cross panni vandhirundhinga. Andha July 27-ku apram last one month-la unga face-la oru different happiness irundhuchu.</p>
+  <p>Adha paathadhum enakku purinjadhu… neenga avingala evalo love panreenga nu.</p>
+  <div class="quote">“He is lucky, Hari.”</div>
+</section>
+
+<section class="story wrap reveal">
+  <div class="story-num">10 — ONE SMALL WISH</div>
+  <h2>The photo I never got.</h2>
+  <p>Enakku oru wish irundhuchu. Ungal kooda oru photo edukkanum nu.</p>
+  <p>But adhu last varaikkum dream-ah poiduchu.</p>
+  <p>Adhukku apram naan ungakita innoru wish ketten. Neenga “Anna” nu mattum solliteenga.</p>
+  <p>But neenga explain pannitinga. Andha moment-la enakku purinjadhu.</p>
+  <p>One-side love panna oru ponnu, namma kitta “Anna” nu sollumbodhu evlo pain irukkum nu words-la explain panna mudiyadhu.</p>
+  <p>Aana naan adhayum accept panniten. Because unga decision-ah respect panren no other option.</p>
+</section>
+
+<section class="story wrap reveal">
+  <div class="story-num">11 — AFTER THIS</div>
+  <h2>Whatever happens next.</h2>
+  <p>Idhukku apram namma conversation down aagalam. Illana konjam konjam pesama kooda pogalam.</p>
+  <p>Life apdi dhaan.</p>
+  <p>But one thing mattum… ungalukku naan kudutha place-ah yaarukkum kudukka mudiyadhu.</p>
+  <p>Oru friend-ah, unga place en life-la unique.</p>
+  <p>Naalai neenga message pannalum, call pannalum, first irundha maadhiriye dhaan naan iruppen. Edhuvum change aagadhu.</p>
+  <div class="quote">“Ungalukku oru friend eppovum iruppan.”</div>
+  <p>Edhavadhu need irundha, help venumna, mudinja varaikkum naan anga iruppen at last breath.</p>
+</section>
+
+<section class="final wrap reveal">
+  <div>
+    <div class="eyebrow">One last thought</div>
+    <h2>Next life nu onnu irundha…</h2>
+    <p>Ungala first meet pannanum nu mattum God ta ketukaren.</p>
+    <p>First time paatha andha moment-la irundhu, indha whole journey varaikkum…</p>
+    <div class="signature">I’m glad I met you, Hari.</div>
+    <p style="margin-top:35px">Miss you.<br>Take care.<br>Bye.</p>
+    <p style="margin-top:45px">Idhula edhavadhu ungalukku hurt aagirundha, I'm really sorry, Hari.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>ONE LAST STORY · 2026</footer>
+
+<script>
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')})
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(x=>observer.observe(x));
+
+/*
+  Short-lived sharing:
+  The page locks at the next 6:00 AM in the viewer's local time.
+  To disable this, remove the "lockAtNextMorning" block.
+*/
+function lockAtNextMorning(){
+  const now = new Date();
+  const next = new Date(now);
+  next.setHours(6,0,0,0);
+  if(next <= now) next.setDate(next.getDate()+1);
+  const key = 'hariStoryLockTime';
+  let lockTime = localStorage.getItem(key);
+  if(!lockTime){
+    lockTime = next.getTime();
+    localStorage.setItem(key, lockTime);
+  }
+  if(Date.now() >= Number(lockTime)){
+    document.getElementById('lock').style.display='grid';
+    document.body.style.overflow='hidden';
+  }
+}
+lockAtNextMorning();
+</script>
+</body>
+</html>
